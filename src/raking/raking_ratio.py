@@ -42,7 +42,7 @@ def get_raking_ratio_weight(idx, quantization, num_rounds):
     X = quantization["image_labels"][idx]
     Y = quantization["text_labels"][idx]
     X, Y, cmat, marginals = count_freq(X, Y, marginals)
-    logging.info(f"Batch clusters {len(marginals[0])}, {len(marginals[1])}")
+    # logging.info(f"Batch clusters {len(marginals[0])}, {len(marginals[1])}")
     pmat = raking_ratio(cmat / len(X), marginals, num_rounds)
     prob = pmat[X, Y] / cmat[X, Y]
     return prob / np.sum(prob)
