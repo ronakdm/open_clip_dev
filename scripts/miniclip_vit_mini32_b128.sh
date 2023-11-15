@@ -1,4 +1,4 @@
-CUDA_VISIBLE_DEVICES=0 python -m training.main \
+CUDA_VISIBLE_DEVICES=1 python -m training.main \
     --save-frequency 1 \
     --zeroshot-frequency 1 \
     --report-to tensorboard \
@@ -6,17 +6,15 @@ CUDA_VISIBLE_DEVICES=0 python -m training.main \
     --val-data="/mnt/ssd/ronak/datasets/imagenet_captions/imagenet_captions_val_c10.csv"  \
     --csv-img-key filepath \
     --csv-caption-key title \
-    --warmup 1000 \
+    --warmup 100 \
     --batch-size=128 \
-    --log-every-n-steps 10 \
-    --lr=1e-3 \
+    --log-every-n-steps 50 \
+    --lr=1e-5 \
     --wd=0.01 \
-    --epochs=5 \
+    --epochs=40 \
     --workers=8 \
     --model ViT-Mini-32 \
-    --name "ViT-Mini-32-Raking-Debug" \
+    --name "ViT-Mini-32-ImageNet-Captions-C10-b128" \
     --quantization="/mnt/ssd/ronak/datasets/imagenet_captions/quantization/vit_b32_laion2b_kmeans_50" \
-    --use-raking \
-    --overwrite
     # --imagenet-val="/mnt/ssd/ronak/datasets/imagenet_captions/imagenet_validation" \
     # --pretrained="/mnt/ssd/ronak/models/laion2b_s34b_b79k.bin" \

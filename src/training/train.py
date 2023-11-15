@@ -124,10 +124,10 @@ def train_one_epoch(
                     )
 
                 if args.use_raking:
-                    image_features, text_features = (
-                        model_out["image_features"],
-                        model_out["text_features"],
-                    )
+                    # image_features, text_features = (
+                    #     model_out["image_features"],
+                    #     model_out["text_features"],
+                    # )
                     sample_weight = torch.from_numpy(
                         get_raking_ratio_weight(
                             idx,
