@@ -1,6 +1,3 @@
-# Figures
-!notebooks/figures/*.pdf
-
 logs/
 wandb/
 models/
